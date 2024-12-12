@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Perfil - Planical modern template</title>
+    <meta property="og:title" content="Perfil - Planical modern template" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link href="../perfil.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+
+      <div class="perfil-container">
+        <div class="perfil-container01">
+				<img class="perfil-image" th:if="${usuarioperfil.usuarioSpotify != null}" th:src="${usuarioperfil.usuarioSpotify?.foto}" alt="image" />
+				<img class="perfil-image" th:if="${usuarioperfil.usuarioSpotify == null}" src="https://www.nicepng.com/png/detail/202-2022264_usuario-annimo-usuario-annimo-user-icon-png-transparent.png" alt="image" />
+          <div class="perfil-container02"></div>
+          <div class="perfil-container03">
+            <a href="perfil" class="perfil-navlink">&nbsp; General</a>
+          </div>
+          <div class="perfil-container04">
+            <a href="amigos" class="perfil-navlink01">Comparar</a>
+            <a href="editar-perfil" class="perfil-navlink02">
+              Editar perfil
+            </a>
+            <a href="actualizar-cuenta" class="perfil-navlink03">
+              Actualizar cuenta
+            </a>
+            <a href="cambio-de-contrasea" class="perfil-navlink04">
+              Cambiar contraseña
+            </a>
+            <a href="cerrar-sesion" class="perfil-navlink06">
+              <span>Cerrar sesión</span>
+              <br />
+            </a>
+            <a href="/" class="perfil-navlink07">
+              <span>Página de inicio</span>
+              <br />
+            </a>
+          </div>
+        </div>
+        <section class="perfil-container05">
+          <h1 class="perfil-text04">&nbsp; Cuenta de Spotify asociada</h1>
+          <div class="perfil-container06">
+            <span class="perfil-text05">
+              <span>&nbsp; &nbsp;</span>
+              <span class="perfil-text07">Nombre de usuario</span>
+            </span>
+            <span th:text="${usuarioperfil.usuarioSpotify?.nombre}" class="perfil-text08">nombre de usuario</span>
+          </div>
+          <div class="perfil-container07">
+            <span class="perfil-text09">
+              <span>&nbsp; &nbsp;</span>
+              <span class="perfil-text11">Correo electrónico</span>
+            </span>
+            <span th:text="${usuarioperfil.usuarioSpotify?.email}" class="perfil-text12">correo electronico</span>
+          </div>
+          <div class="perfil-container08">
+            <span class="perfil-text13">
+              &nbsp; &nbsp;Última actualización&nbsp;
+            </span>
+            <span th:text="${#dates.format(usuarioperfil.usuarioSpotify?.ultAct, 'dd/MM/yyyy')}" class="perfil-text14">
+              ultima vez q actualizo los datos de su cuenta
+            </span>
+          </div>
+          <a href="actualizar-cuenta" class="perfil-navlink08">
+            <div class="perfil-get-started button">
+              <span class="perfil-text15">Actualizar cuenta</span>
+            </div>
+          </a>
+        </section>
+        <div class="perfil-container09">
+          <div class="perfil-container10"></div>
+          <section class="perfil-container11">
+            <h1 class="perfil-text16">&nbsp; General</h1>
+            <h1 class="perfil-text17">&nbsp; Perfil</h1>
+            <div class="perfil-container12">
+              <span class="perfil-text18">
+                <span>&nbsp; &nbsp;</span>
+                <span class="perfil-text20">Nombre de usuario</span>
+              </span>
+              <span class="perfil-text21" th:text="${usuarioperfil.nombre}">nombre de usuario</span>
+            </div>
+            <div class="perfil-container13">
+              <span class="perfil-text22">
+                <span>&nbsp; &nbsp;</span>
+                <span class="perfil-text24">Correo electrónico</span>
+              </span>
+              <span class="perfil-text25" th:text="${usuarioperfil.email}">correo electrónico</span>
+            </div>
+            <div class="perfil-container14">
+              <span class="perfil-text26">
+                <span>&nbsp; &nbsp;</span>
+                <span class="perfil-text28">Fecha de nacimiento</span>
+              </span>
+              <span class="perfil-text29" th:text="${#dates.format(usuarioperfil.fechanacimiento, 'dd/MM/yyyy')}">fecha de nacimiento</span>
+            </div>
+            <div class="perfil-container15">
+              <span class="perfil-text30">&nbsp; &nbsp;Género</span>
+              <span class="perfil-text31" th:text="${usuarioperfil.genero}">género</span>
+            </div>
+            <a href="editar-perfil" class="perfil-navlink09">
+              <div class="perfil-get-started1 button">
+                <span class="perfil-text32">Editar Perfil</span>
+              </div>
+            </a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
